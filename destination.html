@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detail destinasi wisata Malang Raya — Explore Malang">
+  <title id="page-title">Destinasi — Explore Malang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Play CDN is for this academic prototype; no build step required. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js" defer></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-primary: #173f35;
+      --color-secondary: #456c55;
+      --color-ivory: #faf9f6;
+      --color-sand: #f0efe7;
+      --color-accent: #edbd87;
+      --color-muted: #58675f;
+      --font-heading: "Plus Jakarta Sans", sans-serif;
+      --font-body: "DM Sans", sans-serif;
+      --shadow-soft: 0 12px 36px rgb(23 63 53 / 0.07);
+    }
+    @layer base {
+      body { @apply bg-ivory font-body text-primary antialiased; }
+      button, a, input, select { @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary; }
+      button { @apply cursor-pointer; }
+      ::selection { @apply bg-accent text-primary; }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-primary focus:px-6 focus:py-3 focus:text-white">Langsung ke konten</a>
+
+  <!-- HEADER / NAV -->
+  <header class="site-header sticky top-0 z-50 border-b border-primary/10 bg-ivory/95 backdrop-blur-xl" id="site-header">
+    <nav class="nav-container container relative flex h-20 items-center justify-between gap-5 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12" aria-label="Navigasi utama">
+      <a href="index.html" class="nav-logo inline-flex shrink-0 items-center gap-2.5 text-primary">
+        <span class="logo-icon flex size-10 items-center justify-center rounded-full bg-primary/10 text-xl"><iconify-icon icon="solar:leaf-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></span>
+        <span class="logo-text font-heading text-lg font-semibold tracking-tight [&_strong]:font-extrabold">Explore <strong>Malang</strong></span>
+      </a>
+      <ul class="nav-menu absolute inset-x-0 top-full hidden flex-col gap-2 border-b border-primary/10 bg-ivory p-5 shadow-soft [&.nav-open]:flex lg:static lg:flex lg:flex-row lg:items-center lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none" id="nav-menu">
+        <li><a href="index.html" class="nav-link block rounded-full px-5 py-3 text-sm font-semibold text-primary/75 transition-colors hover:bg-primary/5 hover:text-primary">Home</a></li>
+        <li><a href="destinations.html" class="nav-link active block rounded-full px-5 py-3 text-sm font-semibold text-primary/75 transition-colors hover:bg-primary/5 hover:text-primary">Destinations</a></li>
+        <li><a href="trip-planner.html" class="nav-link block rounded-full px-5 py-3 text-sm font-semibold text-primary/75 transition-colors hover:bg-primary/5 hover:text-primary">Plan Your Trip</a></li>
+      </ul>
+      <button class="nav-hamburger flex size-11 flex-col items-center justify-center gap-1.5 rounded-full border border-primary/20 text-2xl text-primary lg:hidden group" id="nav-hamburger" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="nav-menu">
+        <iconify-icon icon="solar:hamburger-menu-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em] group-aria-expanded:hidden" aria-hidden="true"></iconify-icon><iconify-icon icon="solar:close-square-linear" width="1em" height="1em" class="hidden size-[1em] shrink-0 group-aria-expanded:inline-block" aria-hidden="true"></iconify-icon>
+      </button>
+    </nav>
+  </header>
+
+  <!-- MAIN — all content injected by destination.js -->
+  <main id="main-content" tabindex="-1">
+    <noscript><p class="px-5 py-4">Aktifkan JavaScript untuk melihat detail destinasi. <a href="destinations.html" class="underline">Buka katalog destinasi</a>.</p></noscript>
+    <div id="detail-main">
+    <!-- Loading placeholder until JS runs -->
+    <div class="flex min-h-[60vh] items-center justify-center">
+      <p class="text-muted" role="status">Memuat destinasi…</p>
+    </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer bg-primary pt-14 pb-6 text-white/75 md:pt-16">
+    <div class="container mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+      <div class="footer-grid grid gap-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr]">
+        <div class="footer-brand sm:col-span-2 lg:col-span-1">
+          <a href="index.html" class="nav-logo footer-logo inline-flex shrink-0 items-center gap-2.5 text-primary text-white [&_.logo-icon]:bg-white/10">
+            <span class="logo-icon flex size-10 items-center justify-center rounded-full bg-primary/10 text-xl"><iconify-icon icon="solar:leaf-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></span>
+            <span class="logo-text font-heading text-lg font-semibold tracking-tight [&_strong]:font-extrabold">Explore <strong>Malang</strong></span>
+          </a>
+          <p class="footer-tagline mt-5 text-sm font-semibold text-white">Discover More, Experience Malang.</p>
+          <p class="footer-desc mt-3 max-w-xs text-sm leading-relaxed text-white/60">Panduan wisata Malang Raya — Kota Malang, Kota Batu, dan Kabupaten Malang.</p>
+        </div>
+        <div class="footer-links [&_h4]:mb-5 [&_h4]:font-semibold [&_h4]:text-white [&_ul]:space-y-3 [&_a]:inline-block [&_a]:py-1 [&_a]:text-sm [&_a]:transition-colors [&_a:hover]:text-white">
+          <h4>Halaman</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="trip-planner.html">Plan Your Trip</a></li>
+          </ul>
+        </div>
+        <div class="footer-links [&_h4]:mb-5 [&_h4]:font-semibold [&_h4]:text-white [&_ul]:space-y-3 [&_a]:inline-block [&_a]:py-1 [&_a]:text-sm [&_a]:transition-colors [&_a:hover]:text-white">
+          <h4>Kategori</h4>
+          <ul>
+            <li><a href="destinations.html?category=nature">Nature &amp; Adventure</a></li>
+            <li><a href="destinations.html?category=beaches">Beaches</a></li>
+            <li><a href="destinations.html?category=culture">Culture &amp; Heritage</a></li>
+            <li><a href="destinations.html?category=recreation">Family Recreation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom mt-12 flex flex-col justify-between gap-3 border-t border-white/15 pt-6 text-xs leading-relaxed text-white/55 sm:flex-row">
+        <p>&copy; 2026 Explore Malang. Winata Putra.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/destinations-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/destination.js"></script>
+</body>
+</html>

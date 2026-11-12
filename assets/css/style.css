@@ -1,0 +1,26 @@
+/* Shared image fallbacks and interactive states; layout uses Tailwind utilities. */
+.carousel-slide {
+  background-image: var(--slide-image), url('../images/placeholder.svg');
+}
+.detail-hero {
+  background-image: var(--destination-image), url('../images/placeholder.svg');
+}
+.nav-link.active {
+  color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+}
+.indicator.active {
+  width: 2rem;
+  background: var(--color-accent);
+}
+.error { border-color: #b91c1c; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+@media print {
+  .site-header, .site-footer, .carousel-btn, .carousel-indicators { display: none !important; }
+}

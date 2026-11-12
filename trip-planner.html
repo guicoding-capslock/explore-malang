@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rencanakan perjalanan wisata ke Malang Raya — dapatkan rekomendasi destinasi sesuai minatmu.">
+  <title>Plan Your Trip — Explore Malang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Play CDN is for this academic prototype; no build step required. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js" defer></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-primary: #173f35;
+      --color-secondary: #456c55;
+      --color-ivory: #faf9f6;
+      --color-sand: #f0efe7;
+      --color-accent: #edbd87;
+      --color-muted: #58675f;
+      --font-heading: "Plus Jakarta Sans", sans-serif;
+      --font-body: "DM Sans", sans-serif;
+      --shadow-soft: 0 12px 36px rgb(23 63 53 / 0.07);
+    }
+    @layer base {
+      body { @apply bg-ivory font-body text-primary antialiased; }
+      button, a, input, select { @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary; }
+      button { @apply cursor-pointer; }
+      ::selection { @apply bg-accent text-primary; }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-primary focus:px-6 focus:py-3 focus:text-white">Langsung ke konten</a>
+
+  <!-- Header / Navigation -->
+  <header class="site-header sticky top-0 z-50 border-b border-primary/10 bg-ivory/95 backdrop-blur-xl" id="site-header">
+    <nav class="nav-container container relative flex h-20 items-center justify-between gap-5 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12" aria-label="Navigasi utama">
+      <a href="index.html" class="nav-logo inline-flex shrink-0 items-center gap-2.5 text-primary">
+        <span class="logo-icon flex size-10 items-center justify-center rounded-full bg-primary/10 text-xl"><iconify-icon icon="solar:leaf-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></span>
+        <span class="logo-text font-heading text-lg font-semibold tracking-tight [&_strong]:font-extrabold">Explore <strong>Malang</strong></span>
+      </a>
+      <ul class="nav-menu absolute inset-x-0 top-full hidden flex-col gap-2 border-b border-primary/10 bg-ivory p-5 shadow-soft [&.nav-open]:flex lg:static lg:flex lg:flex-row lg:items-center lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none" id="nav-menu">
+        <li><a href="index.html" class="nav-link block rounded-full px-5 py-3 text-sm font-semibold text-primary/75 transition-colors hover:bg-primary/5 hover:text-primary">Home</a></li>
+        <li><a href="destinations.html" class="nav-link block rounded-full px-5 py-3 text-sm font-semibold text-primary/75 transition-colors hover:bg-primary/5 hover:text-primary">Destinations</a></li>
+        <li><a href="trip-planner.html" class="nav-link active block rounded-full px-5 py-3 text-sm font-semibold text-primary/75 transition-colors hover:bg-primary/5 hover:text-primary">Plan Your Trip</a></li>
+      </ul>
+      <button class="nav-hamburger flex size-11 flex-col items-center justify-center gap-1.5 rounded-full border border-primary/20 text-2xl text-primary lg:hidden group" id="nav-hamburger" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="nav-menu">
+        <iconify-icon icon="solar:hamburger-menu-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em] group-aria-expanded:hidden" aria-hidden="true"></iconify-icon><iconify-icon icon="solar:close-square-linear" width="1em" height="1em" class="hidden size-[1em] shrink-0 group-aria-expanded:inline-block" aria-hidden="true"></iconify-icon>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <noscript><p class="mx-auto max-w-7xl bg-accent/20 px-5 py-4 text-sm">Aktifkan JavaScript untuk menggunakan pencarian, carousel, dan rekomendasi perjalanan.</p></noscript>
+
+    <!-- Page Hero -->
+    <section class="page-hero planner-hero bg-sand py-14 md:py-20">
+      <div class="container mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+        <span class="section-label mb-3 block text-xs font-bold tracking-[0.18em] text-secondary uppercase">Perencanaan Perjalanan</span>
+        <h1 class="page-hero-title font-heading text-4xl leading-tight font-extrabold tracking-tight text-primary md:text-5xl">Temukan Petualanganmu</h1>
+        <p class="page-hero-desc mt-5 max-w-2xl text-base leading-relaxed text-muted md:text-lg">Ceritakan preferensi perjalananmu, dan kami akan memberikan rekomendasi destinasi terbaik di Malang Raya untukmu.</p>
+      </div>
+    </section>
+
+    <!-- Planner Section -->
+    <section class="planner-section section-padding  py-14 md:py-20 lg:py-24">
+      <div class="container mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+        <div class="planner-layout grid items-start gap-8 lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)]">
+
+          <!-- FORM SIDE -->
+          <div class="planner-form-col">
+            <form class="planner-form rounded-2xl border border-primary/10 bg-white p-5 shadow-soft sm:p-8" id="planner-form" novalidate>
+              <div class="form-section-title mb-6 border-b border-primary/10 pb-5 [&_h2]:font-heading [&_h2]:text-xl [&_h2]:font-bold [&_p]:mt-2 [&_p]:text-sm [&_p]:text-muted">
+                <h2>Preferensi Perjalanan</h2>
+                <p>Isi form di bawah ini untuk mendapatkan rekomendasi yang tepat.</p>
+              </div>
+
+              <!-- Field 1: Name (optional) -->
+              <div class="form-group mb-5 flex min-w-0 flex-col gap-2">
+                <label for="traveler-name" class="form-label text-sm font-semibold text-primary">Nama <span class="optional-tag text-xs font-normal text-muted">(opsional)</span></label>
+                <input type="text" id="traveler-name" name="travelerName" class="form-input w-full min-w-0 rounded-xl border border-primary/20 bg-white px-4 py-3 text-base focus:border-primary focus:ring-2 focus:ring-primary/15 focus:outline-none" placeholder="Siapa namamu?" autocomplete="given-name">
+              </div>
+
+              <!-- Field 2: Category (required) -->
+              <div class="form-group mb-5 flex min-w-0 flex-col gap-2">
+                <label for="travel-interest" class="form-label text-sm font-semibold text-primary">Jenis Wisata <span class="required-tag text-red-700">*</span></label>
+                <select id="travel-interest" aria-describedby="interest-error" name="travelInterest" class="form-select w-full min-w-0 rounded-xl border border-primary/20 bg-white px-3 py-3 text-sm focus:border-primary focus:ring-2 focus:ring-primary/15 focus:outline-none" required>
+                  <option value="">Pilih jenis wisata...</option>
+                  <option value="nature">Nature &amp; Adventure — Alam &amp; Petualangan</option>
+                  <option value="beaches">Beaches — Pantai &amp; Laut</option>
+                  <option value="culture">Culture &amp; Heritage — Budaya &amp; Sejarah</option>
+                  <option value="recreation">Family Recreation — Hiburan Keluarga</option>
+                  <option value="all">Semua Jenis Wisata</option>
+                </select>
+                <span class="form-error block min-h-4 text-xs font-medium text-red-700" id="interest-error" aria-live="polite"></span>
+              </div>
+
+              <!-- Field 3: Region (required) -->
+              <div class="form-group mb-5 flex min-w-0 flex-col gap-2">
+                <label for="preferred-region" class="form-label text-sm font-semibold text-primary">Wilayah Tujuan <span class="required-tag text-red-700">*</span></label>
+                <select id="preferred-region" aria-describedby="region-error" name="preferredRegion" class="form-select w-full min-w-0 rounded-xl border border-primary/20 bg-white px-3 py-3 text-sm focus:border-primary focus:ring-2 focus:ring-primary/15 focus:outline-none" required>
+                  <option value="">Pilih wilayah...</option>
+                  <option value="kota-malang">Kota Malang</option>
+                  <option value="kota-batu">Kota Batu</option>
+                  <option value="kabupaten-malang">Kabupaten Malang</option>
+                  <option value="all">Semua Wilayah</option>
+                </select>
+                <span class="form-error block min-h-4 text-xs font-medium text-red-700" id="region-error" aria-live="polite"></span>
+              </div>
+
+              <!-- Field 4: Duration -->
+              <div class="form-group mb-5 flex min-w-0 flex-col gap-2">
+                <label class="form-label text-sm font-semibold text-primary">Durasi Perjalanan <span class="required-tag text-red-700">*</span></label>
+                <div class="duration-options grid grid-cols-3 gap-2" id="duration-options" aria-describedby="duration-error" role="group" aria-label="Durasi perjalanan">
+                  <label class="option-card relative block cursor-pointer">
+                    <input type="radio" class="peer sr-only" name="duration" value="1" required>
+                    <span class="option-label flex h-full flex-col items-center justify-center gap-1.5 rounded-xl border border-primary/20 bg-white px-2 py-4 text-center transition hover:border-secondary peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:ring-1 peer-checked:ring-primary peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-primary [&_strong]:text-sm [&_strong]:font-semibold [&_small]:text-[10px] [&_small]:text-muted">
+                      <span class="option-icon text-xl"><iconify-icon icon="solar:moon-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></span>
+                      <strong>1 Hari</strong>
+                      <small>Day trip</small>
+                    </span>
+                  </label>
+                  <label class="option-card relative block cursor-pointer">
+                    <input type="radio" class="peer sr-only" name="duration" value="2">
+                    <span class="option-label flex h-full flex-col items-center justify-center gap-1.5 rounded-xl border border-primary/20 bg-white px-2 py-4 text-center transition hover:border-secondary peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:ring-1 peer-checked:ring-primary peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-primary [&_strong]:text-sm [&_strong]:font-semibold [&_small]:text-[10px] [&_small]:text-muted">
+                      <span class="option-icon text-xl"><iconify-icon icon="solar:moon-stars-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></span>
+                      <strong>2 Hari</strong>
+                      <small>Weekend trip</small>
+                    </span>
+                  </label>
+                  <label class="option-card relative block cursor-pointer">
+                    <input type="radio" class="peer sr-only" name="duration" value="3">
+                    <span class="option-label flex h-full flex-col items-center justify-center gap-1.5 rounded-xl border border-primary/20 bg-white px-2 py-4 text-center transition hover:border-secondary peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:ring-1 peer-checked:ring-primary peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-primary [&_strong]:text-sm [&_strong]:font-semibold [&_small]:text-[10px] [&_small]:text-muted">
+                      <span class="option-icon text-xl"><iconify-icon icon="solar:calendar-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></span>
+                      <strong>3 Hari</strong>
+                      <small>Mini vacation</small>
+                    </span>
+                  </label>
+                </div>
+                <span class="form-error block min-h-4 text-xs font-medium text-red-700" id="duration-error" aria-live="polite"></span>
+              </div>
+
+              <!-- Field 5: Travel companions -->
+              <div class="form-group mb-5 flex min-w-0 flex-col gap-2">
+                <label class="form-label text-sm font-semibold text-primary">Bersama Siapa? <span class="required-tag text-red-700">*</span></label>
+                <div class="companion-options grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-2" id="companion-options" aria-describedby="companions-error" role="group" aria-label="Teman perjalanan">
+                  <label class="option-card compact relative block cursor-pointer">
+                    <input type="radio" class="peer sr-only" name="companions" value="solo" required>
+                    <span class="option-label flex h-full flex-col items-center justify-center gap-1.5 rounded-xl border border-primary/20 bg-white px-2 py-4 text-center transition hover:border-secondary peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:ring-1 peer-checked:ring-primary peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-primary [&_strong]:text-sm [&_strong]:font-semibold [&_small]:text-[10px] [&_small]:text-muted">
+                      <span class="option-icon text-xl"><iconify-icon icon="solar:user-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></span>
+                      <strong>Solo</strong>
+                    </span>
+                  </label>
+                  <label class="option-card compact relative block cursor-pointer">
+                    <input type="radio" class="peer sr-only" name="companions" value="couple">
+                    <span class="option-label flex h-full flex-col items-center justify-center gap-1.5 rounded-xl border border-primary/20 bg-white px-2 py-4 text-center transition hover:border-secondary peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:ring-1 peer-checked:ring-primary peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-primary [&_strong]:text-sm [&_strong]:font-semibold [&_small]:text-[10px] [&_small]:text-muted">
+                      <span class="option-icon text-xl"><iconify-icon icon="solar:heart-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></span>
+                      <strong>Couple</strong>
+                    </span>
+                  </label>
+                  <label class="option-card compact relative block cursor-pointer">
+                    <input type="radio" class="peer sr-only" name="companions" value="friends">
+                    <span class="option-label flex h-full flex-col items-center justify-center gap-1.5 rounded-xl border border-primary/20 bg-white px-2 py-4 text-center transition hover:border-secondary peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:ring-1 peer-checked:ring-primary peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-primary [&_strong]:text-sm [&_strong]:font-semibold [&_small]:text-[10px] [&_small]:text-muted">
+                      <span class="option-icon text-xl"><iconify-icon icon="solar:users-group-two-rounded-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></span>
+                      <strong>Friends</strong>
+                    </span>
+                  </label>
+                  <label class="option-card compact relative block cursor-pointer">
+                    <input type="radio" class="peer sr-only" name="companions" value="family">
+                    <span class="option-label flex h-full flex-col items-center justify-center gap-1.5 rounded-xl border border-primary/20 bg-white px-2 py-4 text-center transition hover:border-secondary peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:ring-1 peer-checked:ring-primary peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-primary [&_strong]:text-sm [&_strong]:font-semibold [&_small]:text-[10px] [&_small]:text-muted">
+                      <span class="option-icon text-xl"><iconify-icon icon="solar:users-group-rounded-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></span>
+                      <strong>Family</strong>
+                    </span>
+                  </label>
+                </div>
+                <span class="form-error block min-h-4 text-xs font-medium text-red-700" id="companions-error" aria-live="polite"></span>
+              </div>
+
+              <!-- Submit -->
+              <div class="form-actions mt-6 flex flex-col gap-3">
+                <button type="submit" class="btn-primary btn-large inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-primary/90 px-8 py-4" id="find-btn">
+                  <iconify-icon icon="solar:magnifer-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon> Temukan Petualanganku
+                </button>
+                <button type="button" class="btn-outline inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-primary/25 px-6 py-3 text-center text-sm font-bold text-primary transition hover:bg-primary/5" id="reset-form-btn" style="display:none">
+                  Ubah Preferensi
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- RESULTS SIDE -->
+          <div class="planner-results-col min-w-0 scroll-mt-28" id="results-col" aria-live="polite">
+            <div class="results-placeholder flex min-h-96 flex-col items-center justify-center rounded-2xl border border-dashed border-primary/25 bg-sand p-8 text-center [&_h3]:font-heading [&_h3]:text-2xl [&_h3]:font-bold [&_p]:mt-4 [&_p]:max-w-md [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-muted" id="results-placeholder">
+              <div class="placeholder-icon mb-6 flex size-20 items-center justify-center rounded-full bg-white text-4xl"><iconify-icon icon="solar:map-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></div>
+              <h3>Rekomendasi Destinasi</h3>
+              <p>Isi preferensi perjalananmu dan klik "Temukan Petualanganku" untuk mendapatkan rekomendasi perjalanan yang dipersonalisasi.</p>
+            </div>
+            <div id="results-output" style="display:none">
+              <!-- Populated by trip-planner.js -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer bg-primary pt-14 pb-6 text-white/75 md:pt-16">
+    <div class="container mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+      <div class="footer-grid grid gap-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr]">
+        <div class="footer-brand sm:col-span-2 lg:col-span-1">
+          <a href="index.html" class="nav-logo footer-logo inline-flex shrink-0 items-center gap-2.5 text-primary text-white [&_.logo-icon]:bg-white/10">
+            <span class="logo-icon flex size-10 items-center justify-center rounded-full bg-primary/10 text-xl"><iconify-icon icon="solar:leaf-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></span>
+            <span class="logo-text font-heading text-lg font-semibold tracking-tight [&_strong]:font-extrabold">Explore <strong>Malang</strong></span>
+          </a>
+          <p class="footer-tagline mt-5 text-sm font-semibold text-white">Discover More, Experience Malang.</p>
+          <p class="footer-desc mt-3 max-w-xs text-sm leading-relaxed text-white/60">Panduan wisata Malang Raya — Kota Malang, Kota Batu, dan Kabupaten Malang.</p>
+        </div>
+        <div class="footer-links [&_h4]:mb-5 [&_h4]:font-semibold [&_h4]:text-white [&_ul]:space-y-3 [&_a]:inline-block [&_a]:py-1 [&_a]:text-sm [&_a]:transition-colors [&_a:hover]:text-white">
+          <h4>Halaman</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="trip-planner.html">Plan Your Trip</a></li>
+          </ul>
+        </div>
+        <div class="footer-links [&_h4]:mb-5 [&_h4]:font-semibold [&_h4]:text-white [&_ul]:space-y-3 [&_a]:inline-block [&_a]:py-1 [&_a]:text-sm [&_a]:transition-colors [&_a:hover]:text-white">
+          <h4>Kategori</h4>
+          <ul>
+            <li><a href="destinations.html?category=nature">Nature &amp; Adventure</a></li>
+            <li><a href="destinations.html?category=beaches">Beaches</a></li>
+            <li><a href="destinations.html?category=culture">Culture &amp; Heritage</a></li>
+            <li><a href="destinations.html?category=recreation">Family Recreation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom mt-12 flex flex-col justify-between gap-3 border-t border-white/15 pt-6 text-xs leading-relaxed text-white/55 sm:flex-row">
+        <p>&copy; 2026 Explore Malang. Winata Putra.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/destinations-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/trip-planner.js"></script>
+</body>
+</html>

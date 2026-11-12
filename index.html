@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Malang — Panduan wisata lengkap Malang Raya: Kota Malang, Kota Batu, dan Kabupaten Malang. Temukan destinasi alam, pantai, budaya, dan hiburan terbaik.">
+  <title>Explore Malang — Jelajahi Keajaiban Malang Raya</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <!-- Play CDN is for this academic prototype; no build step required. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js" defer></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-primary: #173f35;
+      --color-secondary: #456c55;
+      --color-ivory: #faf9f6;
+      --color-sand: #f0efe7;
+      --color-accent: #edbd87;
+      --color-muted: #58675f;
+      --font-heading: "Plus Jakarta Sans", sans-serif;
+      --font-body: "DM Sans", sans-serif;
+      --shadow-soft: 0 12px 36px rgb(23 63 53 / 0.07);
+    }
+    @layer base {
+      body { @apply bg-ivory font-body text-primary antialiased; }
+      button, a, input, select { @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary; }
+      button { @apply cursor-pointer; }
+      ::selection { @apply bg-accent text-primary; }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-primary focus:px-6 focus:py-3 focus:text-white">Langsung ke konten</a>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header sticky top-0 z-50 border-b border-primary/10 bg-ivory/95 backdrop-blur-xl" id="site-header">
+    <nav class="nav-container container relative flex h-20 items-center justify-between gap-5 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12" aria-label="Navigasi utama">
+      <a href="index.html" class="nav-logo inline-flex shrink-0 items-center gap-2.5 text-primary">
+        <span class="logo-icon flex size-10 items-center justify-center rounded-full bg-primary/10 text-xl"><iconify-icon icon="solar:leaf-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></span>
+        <span class="logo-text font-heading text-lg font-semibold tracking-tight [&_strong]:font-extrabold">Explore <strong>Malang</strong></span>
+      </a>
+      <ul class="nav-menu absolute inset-x-0 top-full hidden flex-col gap-2 border-b border-primary/10 bg-ivory p-5 shadow-soft [&.nav-open]:flex lg:static lg:flex lg:flex-row lg:items-center lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none" id="nav-menu">
+        <li><a href="index.html" class="nav-link active block rounded-full px-5 py-3 text-sm font-semibold text-primary/75 transition-colors hover:bg-primary/5 hover:text-primary">Home</a></li>
+        <li><a href="destinations.html" class="nav-link block rounded-full px-5 py-3 text-sm font-semibold text-primary/75 transition-colors hover:bg-primary/5 hover:text-primary">Destinations</a></li>
+        <li><a href="trip-planner.html" class="nav-link block rounded-full px-5 py-3 text-sm font-semibold text-primary/75 transition-colors hover:bg-primary/5 hover:text-primary">Plan Your Trip</a></li>
+      </ul>
+      <button class="nav-hamburger flex size-11 flex-col items-center justify-center gap-1.5 rounded-full border border-primary/20 text-2xl text-primary lg:hidden group" id="nav-hamburger" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="nav-menu">
+        <iconify-icon icon="solar:hamburger-menu-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em] group-aria-expanded:hidden" aria-hidden="true"></iconify-icon><iconify-icon icon="solar:close-square-linear" width="1em" height="1em" class="hidden size-[1em] shrink-0 group-aria-expanded:inline-block" aria-hidden="true"></iconify-icon>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <noscript><p class="mx-auto max-w-7xl bg-accent/20 px-5 py-4 text-sm">Aktifkan JavaScript untuk menggunakan pencarian, carousel, dan rekomendasi perjalanan.</p></noscript>
+
+    <!-- ===== HERO SECTION with CAROUSEL ===== -->
+    <section class="hero-section mx-auto max-w-[1440px] px-3 pt-3 sm:px-6 sm:pt-6" id="hero">
+      <div class="carousel relative isolate overflow-hidden rounded-3xl bg-primary" id="hero-carousel" role="region" aria-roledescription="carousel" aria-label="Inspirasi wisata Malang Raya">
+        <div class="carousel-track relative h-[760px] sm:h-[660px] lg:h-[640px]" id="carousel-track">
+
+          <!-- Slide 1 -->
+          <div class="carousel-slide active invisible absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-700 [&.active]:visible [&.active]:opacity-100" style="--slide-image: url('https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Kampung_Warna_Warni_Malang_-_Juli_2025.jpg/1280px-Kampung_Warna_Warni_Malang_-_Juli_2025.jpg')">
+            <div class="carousel-overlay absolute inset-0 bg-linear-to-r from-primary/95 via-primary/70 to-primary/20"></div>
+            <div class="carousel-content container relative z-10 flex h-full flex-col items-start justify-center pb-20 pt-8 text-white mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+              <span class="hero-label mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold tracking-wide text-white backdrop-blur-sm">Kota Malang</span>
+              <h1 class="hero-headline max-w-3xl font-heading text-4xl leading-[1.12] font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">Jelajahi Malang,<br>Temukan Ceritamu.</h1>
+              <p class="hero-description mt-6 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">Dari kampung penuh warna hingga air terjun tersembunyi — Malang Raya menyimpan ribuan kisah yang menunggu untuk dijelajahi.</p>
+              <div class="hero-cta mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+                <a href="destinations.html" class="hero-primary inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-center text-sm font-bold text-primary transition hover:bg-accent/90">Jelajahi Destinasi</a>
+                <a href="trip-planner.html" class="hero-secondary inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-white/20">Rencanakan Perjalanan</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div inert aria-hidden="true" class="carousel-slide invisible absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-700 [&.active]:visible [&.active]:opacity-100" style="--slide-image: url('https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Air_Terjun_Coban_Rondo.jpg/1280px-Air_Terjun_Coban_Rondo.jpg')">
+            <div class="carousel-overlay absolute inset-0 bg-linear-to-r from-primary/95 via-primary/70 to-primary/20"></div>
+            <div class="carousel-content container relative z-10 flex h-full flex-col items-start justify-center pb-20 pt-8 text-white mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+              <span class="hero-label mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold tracking-wide text-white backdrop-blur-sm">Kabupaten Malang</span>
+              <h2 class="hero-headline max-w-3xl font-heading text-4xl leading-[1.12] font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">Alam yang Menakjubkan,<br>Petualangan Tanpa Batas.</h2>
+              <p class="hero-description mt-6 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">Air terjun megah, hutan tropis, dan panorama alam yang memukau menanti langkah Anda di Malang Raya.</p>
+              <div class="hero-cta mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+                <a href="destinations.html?category=nature" class="hero-primary inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-center text-sm font-bold text-primary transition hover:bg-accent/90">Eksplorasi Alam</a>
+                <a href="trip-planner.html" class="hero-secondary inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-white/20">Rencanakan Perjalanan</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div inert aria-hidden="true" class="carousel-slide invisible absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-700 [&.active]:visible [&.active]:opacity-100" style="--slide-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b8/Balekambang-beach1.jpg')">
+            <div class="carousel-overlay absolute inset-0 bg-linear-to-r from-primary/95 via-primary/70 to-primary/20"></div>
+            <div class="carousel-content container relative z-10 flex h-full flex-col items-start justify-center pb-20 pt-8 text-white mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+              <span class="hero-label mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold tracking-wide text-white backdrop-blur-sm">Kabupaten Malang</span>
+              <h2 class="hero-headline max-w-3xl font-heading text-4xl leading-[1.12] font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">Pantai Eksotis,<br>Kenangan yang Abadi.</h2>
+              <p class="hero-description mt-6 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">Nikmati keindahan pantai-pantai menakjubkan di pesisir selatan Malang dengan pasir putih dan ombak yang mempesona.</p>
+              <div class="hero-cta mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+                <a href="destinations.html?category=beaches" class="hero-primary inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-center text-sm font-bold text-primary transition hover:bg-accent/90">Temukan Pantai</a>
+                <a href="trip-planner.html" class="hero-secondary inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-white/20">Rencanakan Perjalanan</a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.carousel-track -->
+
+        <!-- Carousel Controls -->
+        <button class="carousel-btn carousel-prev absolute bottom-7 z-20 flex size-11 items-center justify-center rounded-full border border-white/40 bg-white/10 text-3xl text-white backdrop-blur-sm transition hover:bg-white/25 right-20 sm:right-24" id="carousel-prev" aria-label="Slide sebelumnya"><iconify-icon icon="solar:alt-arrow-left-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></button>
+        <button class="carousel-btn carousel-next absolute bottom-7 z-20 flex size-11 items-center justify-center rounded-full border border-white/40 bg-white/10 text-3xl text-white backdrop-blur-sm transition hover:bg-white/25 right-6 sm:right-10" id="carousel-next" aria-label="Slide berikutnya"><iconify-icon icon="solar:alt-arrow-right-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></button>
+
+        <button type="button" id="carousel-pause" class="[&[hidden]]:hidden absolute top-5 right-5 z-20 flex min-h-11 items-center gap-2 rounded-full px-4 text-xs font-semibold text-white hover:bg-white/10" aria-pressed="false"><iconify-icon icon="solar:pause-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon> <span>Jeda slide</span></button>
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators absolute bottom-11 left-6 z-20 flex items-center gap-2 sm:left-10 lg:left-20" id="carousel-indicators">
+          <button class="indicator active h-2 w-2 rounded-full bg-white/50 transition-all before:absolute before:-inset-y-3 before:inset-x-0 relative" data-index="0" aria-label="Slide 1"></button>
+          <button class="indicator h-2 w-2 rounded-full bg-white/50 transition-all before:absolute before:-inset-y-3 before:inset-x-0 relative" data-index="1" aria-label="Slide 2"></button>
+          <button class="indicator h-2 w-2 rounded-full bg-white/50 transition-all before:absolute before:-inset-y-3 before:inset-x-0 relative" data-index="2" aria-label="Slide 3"></button>
+        </div>
+
+      </div><!-- /.carousel -->
+    </section>
+
+    <!-- ===== EXPLORE BY EXPERIENCE ===== -->
+    <section class="experience-section section-padding  py-14 md:py-20 lg:py-24">
+      <div class="container mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+        <div class="section-header mb-8 max-w-2xl md:mb-10">
+          <span class="section-label mb-3 block text-xs font-bold tracking-[0.18em] text-secondary uppercase">Jelajahi Berdasarkan</span>
+          <h2 class="section-title font-heading text-3xl leading-tight font-extrabold tracking-tight text-primary md:text-4xl">Pilih Pengalaman Wisata</h2>
+          <p class="section-desc mt-4 max-w-2xl text-base leading-relaxed text-muted">Temukan destinasi yang sesuai dengan minat dan gaya perjalananmu.</p>
+        </div>
+        <div class="experience-grid grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <a href="destinations.html?category=nature" class="experience-card group flex flex-col rounded-2xl border border-primary/10 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft [&_h3]:mt-5 [&_h3]:font-heading [&_h3]:text-lg [&_h3]:font-bold [&_p]:mt-2 [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-muted">
+            <div class="experience-icon flex size-14 items-center justify-center rounded-2xl bg-ivory text-3xl transition group-hover:bg-primary/10"><iconify-icon icon="solar:hiking-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></div>
+            <h3>Nature &amp; Adventure</h3>
+            <p>Air terjun, hutan, dan alam terbuka yang menakjubkan</p>
+          </a>
+          <a href="destinations.html?category=beaches" class="experience-card group flex flex-col rounded-2xl border border-primary/10 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft [&_h3]:mt-5 [&_h3]:font-heading [&_h3]:text-lg [&_h3]:font-bold [&_p]:mt-2 [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-muted">
+            <div class="experience-icon flex size-14 items-center justify-center rounded-2xl bg-ivory text-3xl transition group-hover:bg-primary/10"><iconify-icon icon="solar:water-sun-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></div>
+            <h3>Beaches</h3>
+            <p>Pantai eksotis di pesisir selatan Malang yang memukau</p>
+          </a>
+          <a href="destinations.html?category=culture" class="experience-card group flex flex-col rounded-2xl border border-primary/10 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft [&_h3]:mt-5 [&_h3]:font-heading [&_h3]:text-lg [&_h3]:font-bold [&_p]:mt-2 [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-muted">
+            <div class="experience-icon flex size-14 items-center justify-center rounded-2xl bg-ivory text-3xl transition group-hover:bg-primary/10"><iconify-icon icon="solar:buildings-2-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></div>
+            <h3>Culture &amp; Heritage</h3>
+            <p>Warisan budaya, sejarah, dan seni yang kaya</p>
+          </a>
+          <a href="destinations.html?category=recreation" class="experience-card group flex flex-col rounded-2xl border border-primary/10 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft [&_h3]:mt-5 [&_h3]:font-heading [&_h3]:text-lg [&_h3]:font-bold [&_p]:mt-2 [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-muted">
+            <div class="experience-icon flex size-14 items-center justify-center rounded-2xl bg-ivory text-3xl transition group-hover:bg-primary/10"><iconify-icon icon="solar:ferris-wheel-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></div>
+            <h3>Family Recreation</h3>
+            <p>Taman hiburan dan wisata keluarga yang menyenangkan</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURED DESTINATIONS ===== -->
+    <section class="featured-section section-padding  py-14 md:py-20 lg:py-24 bg-sand">
+      <div class="container mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+        <div class="section-header mb-8 max-w-2xl md:mb-10">
+          <span class="section-label mb-3 block text-xs font-bold tracking-[0.18em] text-secondary uppercase">Pilihan Editor</span>
+          <h2 class="section-title font-heading text-3xl leading-tight font-extrabold tracking-tight text-primary md:text-4xl">Destinasi Unggulan</h2>
+          <p class="section-desc mt-4 max-w-2xl text-base leading-relaxed text-muted">Destinasi-destinasi terbaik yang wajib masuk dalam daftar perjalananmu ke Malang Raya.</p>
+        </div>
+        <div class="destinations-grid grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" id="featured-destinations">
+          <!-- Cards generated by index.js from DESTINATIONS data where featured=true -->
+        </div>
+        <div class="section-cta mt-10 text-center">
+          <a href="destinations.html" class="btn-outline inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-primary/25 px-6 py-3 text-center text-sm font-bold text-primary transition hover:bg-primary/5">Lihat Semua Destinasi</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY EXPLORE MALANG ===== -->
+    <section class="why-section section-padding  py-14 md:py-20 lg:py-24">
+      <div class="container mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+        <div class="why-grid grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <div class="why-content [&>p]:mt-5 [&>p]:text-base [&>p]:leading-relaxed [&>p]:text-muted">
+            <span class="section-label mb-3 block text-xs font-bold tracking-[0.18em] text-secondary uppercase">Mengapa Malang Raya?</span>
+            <h2 class="section-title font-heading text-3xl leading-tight font-extrabold tracking-tight text-primary md:text-4xl">Satu Destinasi,<br>Seribu Pengalaman</h2>
+            <p>Malang Raya — meliputi Kota Malang, Kota Batu, dan Kabupaten Malang — adalah kawasan wisata paling beragam di Jawa Timur. Dalam satu perjalanan, kamu bisa menikmati keindahan alam pegunungan, budaya urban yang hidup, pantai-pantai eksotis di pesisir selatan, hingga wahana hiburan kelas dunia.</p>
+            <p>Kota Malang menawarkan nuansa heritage dan kuliner khas yang otentik. Kota Batu menjanjikan petualangan alam dan taman hiburan bertaraf internasional. Sementara Kabupaten Malang menyimpan keajaiban alam yang belum banyak terjamah — dari air terjun tersembunyi hingga pantai-pantai cantik di Samudra Hindia.</p>
+            <div class="why-stats mt-8 grid grid-cols-3 gap-3 border-t border-primary/15 pt-7">
+              <div class="stat-item flex flex-col gap-2">
+                <span class="stat-number font-heading text-3xl font-extrabold tracking-tight text-primary md:text-4xl">3</span>
+                <span class="stat-label text-xs leading-relaxed text-muted sm:text-sm">Wilayah Administratif</span>
+              </div>
+              <div class="stat-item flex flex-col gap-2">
+                <span class="stat-number font-heading text-3xl font-extrabold tracking-tight text-primary md:text-4xl">10+</span>
+                <span class="stat-label text-xs leading-relaxed text-muted sm:text-sm">Destinasi Pilihan</span>
+              </div>
+              <div class="stat-item flex flex-col gap-2">
+                <span class="stat-number font-heading text-3xl font-extrabold tracking-tight text-primary md:text-4xl">4</span>
+                <span class="stat-label text-xs leading-relaxed text-muted sm:text-sm">Kategori Wisata</span>
+              </div>
+            </div>
+          </div>
+          <div class="why-visual">
+            <div class="why-image-grid grid grid-cols-5 items-end gap-4">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Kampung_Warna_Warni_Malang_-_Juli_2025.jpg/1280px-Kampung_Warna_Warni_Malang_-_Juli_2025.jpg" alt="Kampung Warna-Warni Jodipan" class="why-img why-img-main w-full rounded-2xl object-cover bg-sand col-span-3 aspect-[3/4]" loading="lazy" onerror="this.onerror=null;this.src='assets/images/placeholder.svg'">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Air_Terjun_Coban_Rondo.jpg/1280px-Air_Terjun_Coban_Rondo.jpg" alt="Coban Rondo" class="why-img why-img-sm w-full rounded-2xl object-cover bg-sand col-span-2 mb-10 aspect-[2/3]" loading="lazy" onerror="this.onerror=null;this.src='assets/images/placeholder.svg'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRAVEL INSPIRATION ===== -->
+    <section class="inspiration-section section-padding bg-primary  py-14 md:py-20 lg:py-24 bg-primary text-white">
+      <div class="container mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+        <div class="section-header light mb-8 max-w-2xl md:mb-10 [&_.section-title]:text-white [&_.section-label]:text-accent [&_.section-desc]:text-white/70">
+          <span class="section-label mb-3 block text-xs font-bold tracking-[0.18em] text-secondary uppercase">Inspirasi Perjalanan</span>
+          <h2 class="section-title font-heading text-3xl leading-tight font-extrabold tracking-tight text-primary md:text-4xl">Apa yang Menantimu?</h2>
+        </div>
+        <div class="inspiration-grid grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="inspiration-card border-t border-white/20 pt-6 [&_h3]:mt-4 [&_h3]:font-heading [&_h3]:text-lg [&_h3]:font-bold [&_p]:mt-3 [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-white/70">
+            <div class="insp-icon text-3xl"><iconify-icon icon="solar:leaf-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></div>
+            <h3>Alam &amp; Petualangan</h3>
+            <p>Jelajahi air terjun megah seperti Coban Rondo dan Coban Pelangi, atau nikmati udara sejuk pegunungan Batu yang menyegarkan jiwa.</p>
+          </div>
+          <div class="inspiration-card border-t border-white/20 pt-6 [&_h3]:mt-4 [&_h3]:font-heading [&_h3]:text-lg [&_h3]:font-bold [&_p]:mt-3 [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-white/70">
+            <div class="insp-icon text-3xl"><iconify-icon icon="solar:palette-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></div>
+            <h3>Budaya &amp; Seni</h3>
+            <p>Susuri gang-gang bersejarah Kajoetangan, kagumi seni mural Kampung Jodipan, dan rasakan denyut budaya Kota Malang yang otentik.</p>
+          </div>
+          <div class="inspiration-card border-t border-white/20 pt-6 [&_h3]:mt-4 [&_h3]:font-heading [&_h3]:text-lg [&_h3]:font-bold [&_p]:mt-3 [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-white/70">
+            <div class="insp-icon text-3xl"><iconify-icon icon="solar:water-sun-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></div>
+            <h3>Pantai &amp; Laut</h3>
+            <p>Temukan surga tersembunyi di pantai-pantai selatan Malang — dari Balekambang yang mistis hingga Sendang Biru yang tenang.</p>
+          </div>
+          <div class="inspiration-card border-t border-white/20 pt-6 [&_h3]:mt-4 [&_h3]:font-heading [&_h3]:text-lg [&_h3]:font-bold [&_p]:mt-3 [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-white/70">
+            <div class="insp-icon text-3xl"><iconify-icon icon="solar:ferris-wheel-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></div>
+            <h3>Hiburan Keluarga</h3>
+            <p>Bawa keluarga ke Museum Angkut, Jatim Park, atau Batu Secret Zoo — pengalaman tak terlupakan untuk semua usia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="cta-section section-padding  py-14 md:py-20 lg:py-24">
+      <div class="container mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+        <div class="cta-content mx-auto max-w-3xl text-center [&>p]:mx-auto [&>p]:mt-5 [&>p]:mb-8 [&>p]:max-w-xl [&>p]:leading-relaxed [&>p]:text-muted">
+          <span class="section-label mb-3 block text-xs font-bold tracking-[0.18em] text-secondary uppercase">Siap Memulai?</span>
+          <h2 class="cta-title font-heading text-3xl leading-tight font-extrabold tracking-tight text-primary md:text-5xl">Rencanakan Perjalanan<br>Impianmu ke Malang</h2>
+          <p>Jawab beberapa pertanyaan singkat dan dapatkan rekomendasi destinasi yang disesuaikan dengan minat perjalananmu.</p>
+          <a href="trip-planner.html" class="btn-primary btn-large inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-primary/90 px-8 py-4">Mulai Rencanakan <iconify-icon icon="solar:arrow-right-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer bg-primary pt-14 pb-6 text-white/75 md:pt-16">
+    <div class="container mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
+      <div class="footer-grid grid gap-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr]">
+        <div class="footer-brand sm:col-span-2 lg:col-span-1">
+          <a href="index.html" class="nav-logo footer-logo inline-flex shrink-0 items-center gap-2.5 text-primary text-white [&_.logo-icon]:bg-white/10">
+            <span class="logo-icon flex size-10 items-center justify-center rounded-full bg-primary/10 text-xl"><iconify-icon icon="solar:leaf-linear" width="1em" height="1em" class="inline-block size-[1em] shrink-0 align-[-0.125em]" aria-hidden="true"></iconify-icon></span>
+            <span class="logo-text font-heading text-lg font-semibold tracking-tight [&_strong]:font-extrabold">Explore <strong>Malang</strong></span>
+          </a>
+          <p class="footer-tagline mt-5 text-sm font-semibold text-white">Discover More, Experience Malang.</p>
+          <p class="footer-desc mt-3 max-w-xs text-sm leading-relaxed text-white/60">Panduan wisata Malang Raya — Kota Malang, Kota Batu, dan Kabupaten Malang.</p>
+        </div>
+        <div class="footer-links [&_h4]:mb-5 [&_h4]:font-semibold [&_h4]:text-white [&_ul]:space-y-3 [&_a]:inline-block [&_a]:py-1 [&_a]:text-sm [&_a]:transition-colors [&_a:hover]:text-white">
+          <h4>Halaman</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="trip-planner.html">Plan Your Trip</a></li>
+          </ul>
+        </div>
+        <div class="footer-links [&_h4]:mb-5 [&_h4]:font-semibold [&_h4]:text-white [&_ul]:space-y-3 [&_a]:inline-block [&_a]:py-1 [&_a]:text-sm [&_a]:transition-colors [&_a:hover]:text-white">
+          <h4>Kategori</h4>
+          <ul>
+            <li><a href="destinations.html?category=nature">Nature &amp; Adventure</a></li>
+            <li><a href="destinations.html?category=beaches">Beaches</a></li>
+            <li><a href="destinations.html?category=culture">Culture &amp; Heritage</a></li>
+            <li><a href="destinations.html?category=recreation">Family Recreation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom mt-12 flex flex-col justify-between gap-3 border-t border-white/15 pt-6 text-xs leading-relaxed text-white/55 sm:flex-row">
+        <p>&copy; 2026 Explore Malang. Winata Putra.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/destinations-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/index.js"></script>
+
+</body>
+</html>

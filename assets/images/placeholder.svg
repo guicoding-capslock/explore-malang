@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#173F35"/>
+
+  <!-- Mountain Illustration -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Big Mountain -->
+    <polygon points="400,140 260,340 540,340" fill="#205548" stroke="#FFFFFF" stroke-width="6"/>
+    <!-- Small Mountain Left -->
+    <polygon points="270,220 170,340 370,340" fill="#296B5B" stroke="#FFFFFF" stroke-width="6"/>
+    <!-- Small Mountain Right -->
+    <polygon points="510,240 430,340 590,340" fill="#296B5B" stroke="#FFFFFF" stroke-width="6"/>
+    <!-- Sun -->
+    <circle cx="530" cy="170" r="32" fill="#DCA16C" stroke="#DCA16C" stroke-width="2"/>
+    <!-- Snow peak center -->
+    <polygon points="400,140 375,178 392,172 400,182 412,172 425,178" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2"/>
+  </g>
+
+  <!-- Ground Line -->
+  <line x1="140" y1="340" x2="660" y2="340" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- Text -->
+  <text x="400" y="390" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">EXPLORE MALANG</text>
+  <text x="400" y="420" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="14" fill="#5D856D" text-anchor="middle" letter-spacing="1">Pesona Malang Raya</text>
+</svg>
