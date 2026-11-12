@@ -4,7 +4,7 @@
 
 Website pariwisata untuk menemukan destinasi wisata terbaik di Malang Raya — Kota Malang, Kota Batu, dan Kabupaten Malang.
 
-Dibuat sebagai proyek UTS mata kuliah Pemrograman Web 1.
+Dibuat sebagai proyek UAS mata kuliah Pemrograman Web 1.
 
 ---
 
@@ -27,7 +27,7 @@ Dibuat sebagai proyek UTS mata kuliah Pemrograman Web 1.
 
 Tidak memakai Bootstrap, npm, Vite, PostCSS, atau proses build. Layout, typography, spacing, komponen, dan responsive design menggunakan utility Tailwind (`sm:`, `md:`, `lg:`, `xl:`).
 
-**Play CDN ditujukan untuk development/prototyping**, sesuai kebutuhan proyek UTS ini. Konfigurasi ini bukan production-optimized. Tailwind, Google Fonts, Iconify, dan foto eksternal memerlukan koneksi internet. Lihat [dokumentasi resmi Play CDN](https://tailwindcss.com/docs/installation/play-cdn).
+**Play CDN ditujukan untuk development/prototyping**, sesuai kebutuhan proyek UAS ini. Konfigurasi ini bukan production-optimized. Tailwind, Google Fonts, Iconify, dan foto eksternal memerlukan koneksi internet. Lihat [dokumentasi resmi Play CDN](https://tailwindcss.com/docs/installation/play-cdn).
 
 ## Struktur Project
 
@@ -112,7 +112,7 @@ git push -u origin main
 > - Tidak memerlukan backend/server-side processing
 > - Tidak menggunakan routing yang bergantung pada server
 
-## Checklist Ketentuan UTS
+## Checklist Ketentuan UAS
 
 - [x] Tema: Pemasaran/Promosi Wisata
 - [x] Minimal 4 file HTML berbeda yang saling terhubung
@@ -155,4 +155,4 @@ Foto destinasi dimuat dari internet dan ikon menggunakan Solar dari Iconify. Jik
 
 ---
 
-*Dibuat dengan ❤️ untuk UTS Pemrograman Web 1*
+*Dibuat dengan ❤️ oleh Guido untuk UAS Pemrograman Web 1*
